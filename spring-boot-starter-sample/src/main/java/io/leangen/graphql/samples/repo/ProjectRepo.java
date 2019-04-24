@@ -1,5 +1,6 @@
 package io.leangen.graphql.samples.repo;
 
+import io.leangen.graphql.samples.dto.Tags;
 import io.leangen.graphql.samples.dto.Task;
 import io.leangen.graphql.samples.dto.Project;
 import org.springframework.stereotype.Repository;
@@ -16,7 +17,7 @@ public class ProjectRepo {
 
     private final Map<String, Project> projects = new HashMap<>();
 
-    public Project save(String name, List<String> tags) {
+    public Project save(String name, Tags tags) {
         String code = generateCode(name);
         Project project = new Project(code, name, new ArrayList<>(), tags);
         projects.put(code, project);

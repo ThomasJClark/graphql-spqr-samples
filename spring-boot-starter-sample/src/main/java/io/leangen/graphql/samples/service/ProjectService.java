@@ -5,6 +5,7 @@ import io.leangen.graphql.annotations.GraphQLContext;
 import io.leangen.graphql.annotations.GraphQLMutation;
 import io.leangen.graphql.annotations.GraphQLQuery;
 import io.leangen.graphql.samples.dto.Project;
+import io.leangen.graphql.samples.dto.Tags;
 import io.leangen.graphql.samples.dto.Task;
 import io.leangen.graphql.samples.repo.TaskRepo;
 import io.leangen.graphql.samples.repo.ProjectRepo;
@@ -30,7 +31,7 @@ public class ProjectService {
     }
 
     @GraphQLMutation
-    public Project createProject(String name, @GraphQLArgument(name = "tags", defaultValue = "[]") List<String> tags) {
+    public Project createProject(String name, @GraphQLArgument(name = "tags", defaultValue = "[]") Tags tags) {
         return repo.save(name, tags);
     }
 

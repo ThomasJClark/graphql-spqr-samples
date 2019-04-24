@@ -10,14 +10,14 @@ public class Project {
     private final String code;
     private final String name;
     private final List<Task> tasks;
-    private final List<String> tags;
+    private final Tags tags;
 
     public Project(String name) {
-        this(null, name, new ArrayList<>(), new ArrayList<>());
+        this(null, name, new ArrayList<>(), new Tags());
     }
 
     @JsonCreator
-    public Project(String code, String name, List<Task> tasks, List<String> tags) {
+    public Project(String code, String name, List<Task> tasks, Tags tags) {
         this.code = code;
         this.name = name;
         this.tasks = tasks;
@@ -44,7 +44,7 @@ public class Project {
         return tasks;
     }
 
-    public List<String> getTags() {
+    public Tags getTags() {
         return tags;
     }
 }
